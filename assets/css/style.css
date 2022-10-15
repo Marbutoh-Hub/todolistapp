@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Dosis:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Averia+Libre&family=Dosis:wght@600&display=swap");
+
+* {
+  font-family: "Acme", sans-serif;
+}
+
+body > header {
+  background-color: rgb(248, 182, 246);
+  padding: 10px;
+  display: flex;
+}
+
+header > h1 {
+  margin-left: 50px;
+  font-size: 2.5rem;
+  color: rgb(79, 9, 56);
+}
+
+header > img {
+  width: 50px;
+  height: 50px;
+  margin-top: 27px;
+  margin-left: 10px;
+}
+
+/* css content start */
+.content {
+  /* border: 2px solid black; */
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#form {
+  /* border: 2px solid black; */
+  flex-grow: 3;
+  padding: 10px;
+}
+
+.title > h3 {
+  font-size: 1.5rem;
+  color: rgb(113, 46, 201);
+}
+
+.title > img {
+  margin-top: -20px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.title > h3,
+img {
+  margin-left: 40px;
+}
+
+#form > .title {
+  /* border: 2px solid black; */
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  background-color: rgb(191, 182, 234);
+}
+
+.form-inputan {
+  /* border: 3px solid rgb(91, 8, 78); */
+  margin-top: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group > label {
+  font-size: 1.5rem;
+}
+
+.form-group > input {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2.4px solid rgb(107, 52, 113);
+  border-radius: 10px;
+}
+.btn-submit {
+  padding: 20px;
+  font-size: 1.3rem;
+  width: 70%;
+  margin: 40px auto;
+  background-color: rgb(240, 153, 222);
+  border-radius: 10px;
+}
+.form-checkbox {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.form-checkbox > label {
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+#display {
+  /* border: 2px solid black; */
+  flex-grow: 7;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+hr {
+  border: 2px solid black;
+  width: 90%;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.form-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.form-search > input {
+  width: 300px;
+}
+.form-search > label {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.belum-selesai-dibaca {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.belum-selesai-dibaca > header {
+  background-color: antiquewhite;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: flex;
+  flex-direction: row;
+}
+
+.belum-selesai-dibaca > header > h3 {
+  font-size: 1.5rem;
+  color: rgb(96, 30, 83);
+  font-family: "Dosis", sans-serif;
+  margin-left: 15px;
+}
+.belum-selesai-dibaca > header > img {
+  margin-top: 17px;
+}
+
+.selesai-dibaca {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.selesai-dibaca > header {
+  background-color: antiquewhite;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: flex;
+  flex-direction: row;
+}
+
+.selesai-dibaca > header > h3 {
+  font-size: 1.5rem;
+  color: rgb(96, 30, 83);
+  font-family: "Dosis", sans-serif;
+  margin-left: 15px;
+}
+
+/* .selesai-dibaca > header > img {
+  margin-top: 17px;
+} */
+
+.containers-book-unread {
+  border: 2px solid black;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.containers-book-unread > img {
+  border: 2px solid rgb(93, 17, 87);
+}
+
+.isi {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 9;
+}
+
+.isi > h4 {
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 2rem;
+  font-family: "Averia Libre", cursive;
+  color: rgb(0, 5, 151);
+}
+.isi > span {
+  margin-top: -30px;
+  margin-left: 30px;
+  font-size: 1.5rem;
+}
+.isi > h6 {
+  margin-left: 30px;
+  font-size: 1rem;
+  margin-top: 7px;
+}
+.cover {
+  /* border: 2px solid black; */
+  flex-grow: 1;
+}
+
+.containers-book-isRead {
+  border: 2px solid black;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.coverisRead {
+  /* border: 2px solid black; */
+  flex-grow: 1;
+}
+.isi-isRead {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 6;
+}
+.isi-isRead > h4 {
+  margin-top: 20px;
+  /* margin-left: 30px; */
+  font-size: 2rem;
+  font-family: "Averia Libre", cursive;
+  color: rgb(0, 5, 151);
+}
+
+.isi-isRead > span {
+  margin-top: -30px;
+  /* margin-left: 30px; */
+  font-size: 1.5rem;
+}
+
+.isi-isRead > h6 {
+  /* margin-left: 30px; */
+  font-size: 1rem;
+  margin-top: 7px;
+}
+.action {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  /* border: 2px solid black; */
+  justify-content: baseline;
+}
+
+.action > button {
+  margin: 20px auto;
+}
+
+.undo {
+  background: url("../icon/undobefore.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+  transition: 1s;
+}
+
+.undo:hover {
+  transform: rotate(360deg);
+  background: url("../icon/hoverundo.svg");
+}
+
+.hapus {
+  background: url("../icon/trashbefore.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+  transition: 1s;
+}
+
+.hapus:hover {
+  transform: rotate(-30deg);
+  background: url("../icon/trashover.svg");
+}
+.sdb > img {
+  margin-top: 15px;
+}
+
+/* css content end */ ;

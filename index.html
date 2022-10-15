@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bookshelf Apps</h1>
+      <img src="assets/icon/book.png" alt="" />
+    </header>
+    <div class="content">
+      <div class="section" id="form">
+        <div class="title">
+          <h3>Enter New Book Data</h3>
+          <img src="assets/icon/note.png" alt="" />
+        </div>
+        <div class="form-inputan">
+          <form class="form" action="#" id="form">
+            <div class="form-group form-title">
+              <label for="title">Judul</label>
+              <input type="text" id="title" name="title" required />
+            </div>
+            <div class="form-group form-created">
+              <label for="created">Penulis</label>
+              <input type="text" id="created" name="created" required />
+            </div>
+            <div class="form-group form-year">
+              <label for="year">Year</label>
+              <input type="date" id="year" name="year" required />
+            </div>
+            <div class="form-checkbox form-year">
+              <input type="checkbox" value="checkbox" name="selesai-dibaca" id="checkbook" />
+              <label for="selesai-dibaca">Selesai dibaca</label>
+            </div>
+            <button type="submit" value="Submit" name="Submit" class="btn-submit">Masukan Ke Rak Belum selesai dibaca</button>
+          </form>
+        </div>
+      </div>
+      <div class="section" id="display">
+        <div class="cari-buku">
+          <form class="form-cari" action="#" id="form-cari">
+            <div class="form-group form-search">
+              <label for="search">search</label>
+              <input type="text" id="search" name="search" placeholder="Masukan nama buku ..." required />
+            </div>
+          </form>
+          <hr />
+          <div class="belum-selesai-dibaca">
+            <header>
+              <img src="assets/icon/unread.png" alt="" srcset="" />
+              <h3>Belum selesai dibaca</h3>
+            </header>
+            <div id="bsd">
+              <!-- <div class="containers-book-unread">
+                <div class="cover">
+                  <img src="assets/icon/Bookcover.jpg" alt="" />
+                </div>
+                <div class="isi">
+                  <h4>Hilang dalam dekapan semeru</h4>
+                  <span>Tiara Sn</span>
+                  <h6>2006</h6>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="selesai-dibaca">
+            <header class="sdb">
+              <img src="assets/icon/doneread.png" alt="" />
+              <h3>Selesai dibaca</h3>
+            </header>
+            <div id="sdb">
+              <!-- <div class="containers-book-isRead">
+                <div class="coverisRead">
+                  <img src="assets/icon/Bookcover.jpg" alt="" />
+                </div>
+                <div class="isi-isRead">
+                  <h4>Hilang dalam dekapan semeru</h4>
+                  <span>Tiara Sn</span>
+                  <h6>2006</h6>
+                </div>
+                <div class="action">
+                  <button class="undo"></button>
+                  <button class="hapus"></button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
