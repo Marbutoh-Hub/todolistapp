@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Dosis:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Averia+Libre&family=Dosis:wght@600&display=swap");
-
+body {
+  margin: 0px;
+  /* z-index: 1; */
+}
 * {
   font-family: "Acme", sans-serif;
+  overflow-x: hidden;
 }
 
 body > header {
@@ -212,7 +216,8 @@ hr {
 .isi {
   display: flex;
   flex-direction: column;
-  flex-grow: 9;
+  flex-grow: 6;
+  /* border: 2px solid black; */
 }
 
 .isi > h4 {
@@ -248,8 +253,8 @@ hr {
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .coverisRead {
-  /* border: 2px solid black; */
   flex-grow: 1;
+  /* border: 2px solid black; */
 }
 .isi-isRead {
   /* border: 2px solid black; */
@@ -283,6 +288,9 @@ hr {
   /* border: 2px solid black; */
   justify-content: baseline;
 }
+.action2 {
+  margin-right: 10px;
+}
 
 .action > button {
   margin: 20px auto;
@@ -297,6 +305,22 @@ hr {
   cursor: pointer;
   border: none;
   transition: 1s;
+}
+
+.uncheck {
+  background: url("../icon/unchecked.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+  transition: 0.02s;
+}
+
+.uncheck:hover {
+  /* transform: rotate(180deg); */
+  background: url("../icon/checked.svg");
 }
 
 .undo:hover {
@@ -322,5 +346,94 @@ hr {
 .sdb > img {
   margin-top: 15px;
 }
+.popUp {
+  width: 50%;
+  border: 2px solid black;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 100px;
+  /* height: 500px; */
+  background-color: white;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: none;
+}
+.popUp2 {
+  width: 50%;
+  border: 2px solid black;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 100px;
+  /* height: 500px; */
+  background-color: white;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: none;
+}
+.title-popup {
+  margin-top: 40px;
+  margin-left: 30%;
+  font-size: 1.2rem;
+}
 
+.title-popup2 {
+  margin-top: 40px;
+  margin-left: 30%;
+  font-size: 1.2rem;
+}
+
+.title-popup2 > h3 {
+  margin-left: 110px;
+}
+
+.question {
+  margin-left: 19%;
+  width: 150px;
+  content: url("../icon/questionsvg.svg");
+}
+.question2 {
+  margin-left: 19%;
+  width: 150px;
+  content: url("../icon/deletedcheck.svg");
+}
+.action-popup {
+  margin: 50px auto;
+}
+.action-popup2 {
+  margin: 50px auto;
+}
+.action-popup > button {
+  font-size: 1.5rem;
+  background-color: rgb(221, 119, 196);
+  margin-left: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100px;
+  border-radius: 15px;
+}
+.action-popup2 > button {
+  font-size: 1.5rem;
+  background-color: rgb(156, 235, 184);
+  margin-left: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100px;
+  border-radius: 15px;
+}
+
+.drawerPopup {
+  width: 100%;
+  height: 5000px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin-top: -2000px;
+  z-index: 0;
+  display: none;
+}
 /* css content end */ ;

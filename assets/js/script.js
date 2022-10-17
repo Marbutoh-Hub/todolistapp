@@ -12,6 +12,11 @@ function isStorageExist() /* boolean */ {
   return true;
 }
 
+function beforeDelete() {
+  const body = document.querySelector(".drawerPopup");
+  body.style.display = "block";
+}
+
 function Read() {
   return document.getElementById("checkbook").checked;
 }
@@ -26,7 +31,16 @@ function undofile(idbook) {
   saveBook();
 }
 
-function deleteBook(idbook) {
+function addToRead(idbook) {
+  const bookTarget = getBook(idbook);
+
+  if (bookTarget == null) return;
+  bookTarget.isRead = true;
+  document.dispatchEvent(new Event(RENDER_EVENT));
+  saveBook();
+}
+
+function deleteBookOk(idbook) {
   const bookTarget = findBookIndex(idbook);
 
   if (bookTarget === -1) return;
@@ -34,6 +48,33 @@ function deleteBook(idbook) {
   books.splice(bookTarget, 1);
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveBook();
+}
+
+function deleteBook(idbook) {
+  beforeDelete();
+  const btnOke = document.getElementById("oke");
+  const cariBuku = document.querySelector(".popUp");
+  const cariBuku2 = document.querySelector(".popUp2");
+  const btn2 = document.getElementById("oke2");
+  cariBuku.style.display = "flex";
+  btnOke.addEventListener("click", function () {
+    const bookTarget = findBookIndex(idbook);
+    if (bookTarget === -1) return;
+    books.splice(bookTarget, 1);
+    document.dispatchEvent(new Event(RENDER_EVENT));
+    saveBook();
+    const body = document.querySelector(".drawerPopup");
+    sweetAlertConfirmation(cariBuku);
+    cariBuku2.style.display = "flex";
+    btn2.addEventListener("click", function () {
+      cariBuku2.style.display = "none";
+      body.style.display = "none";
+    });
+  });
+}
+
+function sweetAlertConfirmation(val1) {
+  val1.style.display = "none";
 }
 
 function findBookIndex(idbook) {
@@ -117,9 +158,17 @@ function createList(bookObject) {
   container.setAttribute("class", "containers-book-unread");
   container.setAttribute("id", `book-${bookObject.id}`);
   container.append(cover, bodyBuku);
+  const action = document.createElement("div");
+  const btnUncheck = document.createElement("button");
+  btnUncheck.classList.add("uncheck");
+  action.append(btnUncheck);
+  container.append(action);
+  action.setAttribute("class", "action2");
+  btnUncheck.addEventListener("click", function () {
+    addToRead(bookObject.id);
+  });
 
   if (bookObject.isRead) {
-    const action = document.createElement("div");
     const btnUndo = document.createElement("button");
     btnUndo.addEventListener("click", function () {
       undofile(bookObject.id);
@@ -127,16 +176,19 @@ function createList(bookObject) {
     const btnDelete = document.createElement("button");
 
     btnDelete.addEventListener("click", function () {
+      // const body1 = document.getElementsByTagName("*");
+      // body1[0].style.overflowY = "hidden";
       deleteBook(bookObject.id);
     });
 
     btnUndo.classList.add("undo");
     btnDelete.classList.add("hapus");
-    cover.classList.replace("cover", "coverisRead");
+    cover.setAttribute("class", "cover");
     container.classList.replace("containers-book-unread", "containers-book-isRead");
     bodyBuku.classList.replace("isi", "isi-isRead");
-    action.setAttribute("class", "action");
+    action.classList.replace("action2", "action");
     action.append(btnUndo, btnDelete);
+    btnUncheck.style.display = "none";
     container.append(action);
   }
   return container;
