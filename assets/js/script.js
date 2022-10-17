@@ -52,6 +52,21 @@ function deleteBookOk(idbook) {
 
 function deleteBook(idbook) {
   beforeDelete();
+  var height = books.length;
+  if (height < 5) {
+    var heightY = 5000;
+    var heightYfix = String(heightY);
+    var mT = String(2000);
+  } else {
+    var heightY = height * 5000;
+    var heightYfix = String(heightY);
+    var mT = String(heightYfix);
+  }
+
+  const body = document.querySelector(".drawerPopup");
+  body.style.height = heightYfix + "px";
+  body.style.marginTop = "-" + mT + "px";
+
   const btnOke = document.getElementById("oke");
   const cariBuku = document.querySelector(".popUp");
   const cariBuku2 = document.querySelector(".popUp2");
@@ -63,7 +78,18 @@ function deleteBook(idbook) {
     books.splice(bookTarget, 1);
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveBook();
+    // if (height < 5) {
+    //   var heightY = 5000;
+    //   var heightYfix = String(heightY);
+    //   var mT = String(2000);
+    // } else {
+    //   var heightY = height * 5000;
+    //   var heightYfix = String(heightY);
+    //   var mT = String(heightYfix);
+    // }
     const body = document.querySelector(".drawerPopup");
+    // body.style.height = heightYfix + "px";
+    // body.style.marginTop = "-" + mT + "px";
     sweetAlertConfirmation(cariBuku);
     cariBuku2.style.display = "flex";
     btn2.addEventListener("click", function () {
