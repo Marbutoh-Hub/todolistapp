@@ -14,6 +14,15 @@ function undofile(idbook) {
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
+function deleteBook(idbook) {
+  const bookTarget = getBook(idbook);
+
+  if (bookTarget === -1) return;
+
+  books.splice(bookTarget, 1);
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const submitBook = document.getElementById("form");
   submitBook.addEventListener("submit", function (Event) {
@@ -72,6 +81,10 @@ function createList(bookObject) {
       undofile(bookObject.id);
     });
     const btnDelete = document.createElement("button");
+
+    btnDelete.addEventListener("click", function () {
+      deleteBook(bookObject.id);
+    });
 
     btnUndo.classList.add("undo");
     btnDelete.classList.add("hapus");
